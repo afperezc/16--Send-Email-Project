@@ -697,12 +697,13 @@ video {
 .contenedor-titulo{
   margin-top: 10rem;
   display: block;
-  background-color: #fdfd96;
+  border: 0.5rem solid #fdfd96;
   border-radius: 0.5rem;
 }
 .texto-titulo{
   font-family:  sans-serif, "Apple Color Emoji";
   text-align: center;
+  color: white;
   padding: 1rem 0;
   font-size: 1.5rem;
   font-weight: bold;

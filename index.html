@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Send</title>
     <link rel="stylesheet" href="dist/app.css" />
+    <link rel="stylesheet" href="dist/spinner.css" />
   </head>
   <body class="min-h-screen bg-slate-300">
     <div class="max-w-3xl mx-auto p-10">
       <div class="contenedor-titulo">
-        <h1 class="texto-titulo">Send Email</h1>
+        <h1 class="texto-titulo">Wanna ask something?</h1>
       </div>
       <div class="bg-white rounded-lg shadow-xl p-10 mt-5">
         <form id="formulario" class="space-y-3">
@@ -20,31 +21,33 @@
               id="email"
               type="email"
               name="email"
-              placeholder="Receiver email, example: mkt@firm.com"
+              placeholder="Type your Email, example: mkt@firm.com"
               class="border border-gray-300 px-3 py-2 rounded-lg"
             />
           </div>
 
           <div class="flex flex-col space-y-2">
-            <label for="asunto" class="font-regular font-medium">Business:</label>
+            <label for="subject" class="font-regular font-medium"
+              >Subject:</label
+            >
             <input
-              id="asunto"
+              id="subject"
               type="text"
-              name="asunto"
-              placeholder="Email business"
+              name="subject"
+              placeholder="Email subject"
               class="border border-gray-300 px-3 py-2 rounded-lg"
             />
           </div>
 
           <div class="flex flex-col space-y-2">
-            <label for="mensaje" class="font-regular font-medium"
+            <label for="message" class="font-regular font-medium"
               >Message:</label
             >
             <textarea
-              id="mensaje"
+              id="message"
               type="text"
-              name="mensaje"
-              placeholder="Type your business"
+              name="message"
+              placeholder="Type your message"
               class="border border-gray-300 px-3 py-2 rounded-lg h-36"
             ></textarea>
           </div>
@@ -94,6 +97,16 @@
             </button>
           </div>
         </form>
+        <div id="spinner" class="hidden justify-center mt-10">
+          <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+          </div>
+        </div>
       </div>
     </div>
 
