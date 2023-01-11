@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const email = {
     email: "",
+    cc: "",
     subject: "",
-    message: "",
+    message: ""
   };
 
   //Seleccionar los elementos de la interfaz
 
   const inputEmail = document.querySelector("#email");
+  const inputCC = document.querySelector('#cc');
   const inputSubject = document.querySelector("#subject");
   const inputMessage = document.querySelector("#message");
   const formulario = document.querySelector("#formulario");
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Asignar eventos
   inputEmail.addEventListener("input", validar); //funcion asociada
+  inputCC.addEventListener("input", validar);
   inputSubject.addEventListener("input", validar);
   inputMessage.addEventListener("input", validar);
 
@@ -58,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },3000)
     }, 3000);
   }
+  
   //Funcion reutilizable para los campos
   function validar(e) {
     if (e.target.value.trim() === "") {
@@ -73,6 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target.id === "email" && !validarEmail(e.target.value)) {
       mostrarAlerta("The Email is not valid", e.target.parentElement);
       email[e.target.name] = "";
+      comprobarEmail();
+      return;
+    }
+    if (e.target.id === "cc" && !validarEmail(e.target.value)) {
+      mostrarAlerta("The Email is not valid", e.target.parentElement);
+      cc[e.target.name] = "";
       comprobarEmail();
       return;
     }
@@ -136,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
           //Reiniciar el objeto
 
           email.email = "";
+          email.cc = "";
           email.subject = "";
           email.message = "";
     
